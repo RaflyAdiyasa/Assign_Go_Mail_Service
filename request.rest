@@ -1,0 +1,52 @@
+### Submit Mail (User only)
+POST http://localhost:5001/api/mails
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+Content-Type: application/json
+
+{
+  "url_file_surat": "https://example.com/surat123.pdf",
+  "subject_surat": "Surat Tugas Penelitian"
+}
+
+### Get Template Surat Tugas
+GET http://localhost:5001/api/mails/template
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+
+### Get User's Mails
+GET http://localhost:5001/api/mails/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+
+### Get Mail Details
+GET http://localhost:5001/api/mails/details/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+
+### Get Mail History
+GET http://localhost:5001/api/history/1
+Authorization: Bearer user-token-here
+
+### Get All Mails (Admin only)
+GET http://localhost:5001/api/mails
+Authorization: Bearer admin-token-here
+
+### Get Mail Stats (Admin only)
+GET http://localhost:5001/api/mails/stats
+Authorization: Bearer admin-token-here
+
+### Update Mail Status to Disetujui (Admin only)
+POST http://localhost:5001/api/history/1
+Authorization: Bearer admin-token-here
+Content-Type: application/json
+
+{
+  "status": "disetujui"
+}
+
+### Update Mail Status to Ditolak (Admin only)
+POST http://localhost:5001/api/history/2
+Authorization: Bearer admin-token-here
+Content-Type: application/json
+
+{
+  "status": "ditolak",
+  "alasan": "Format surat tidak sesuai dengan ketentuan"
+}
