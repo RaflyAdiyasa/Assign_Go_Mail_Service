@@ -1,6 +1,6 @@
 ### Submit Mail (User only)
 POST http://localhost:5001/api/mails
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzg5MDEzLCJleHAiOjE3NDkzOTI2MTN9.z_-sM0Mp8c5MrUcv5gtwLGxOVNstYCmA1ESNJbyGnlg
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvb
 
 ### Get Mail Details
 GET http://localhost:5001/api/mails/details/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzg4Njg5LCJleHAiOjE3NDkzOTIyODl9.N0iIX91a4AtktJONdE9dW-0rDYRUETDQhxC16eo5Dos
 
 ### Get Mail History
 GET http://localhost:5001/api/history/1
@@ -50,3 +50,18 @@ Content-Type: application/json
   "status": "ditolak",
   "alasan": "Format surat tidak sesuai dengan ketentuan"
 }
+###
+POST http://localhost:5004/api/mails
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzkxMDk4LCJleHAiOjE3NDkzOTQ2OTh9.WzfJcMTQ58T3rlrianldTupOA-Eh_xEgGcvE-tlb_sw
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="subject_surat"
+
+Surat Tugas Penelitian
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file_surat"; filename="test.pdf"
+Content-Type: application/pdf
+
+< ./Secret/test.pdf
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
