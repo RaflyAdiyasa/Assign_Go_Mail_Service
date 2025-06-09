@@ -6,7 +6,7 @@ import { isAdmin, isUser } from '../middleware/roleMiddleware.js';
 const router = express.Router();
 
 // Protected routes
-router.post('/', verifyJWT, isUser, submitMail);
+router.post('/', verifyJWT, isUser, submitMail); // Now handles file upload
 router.get('/user', verifyJWT, getMailsByUser);
 router.get('/details/:mailId', verifyJWT, getMailDetails);
 router.get('/template', verifyJWT, getMailTemplate);
@@ -16,4 +16,3 @@ router.get('/', verifyJWT, isAdmin, getAllMails);
 router.get('/stats', verifyJWT, isAdmin, getMailStats);
 
 export default router;
-

@@ -2,35 +2,58 @@ import Mail from '../models/mailModel.js';
 import History from '../models/historyModel.js';
 import { Op } from 'sequelize';
 import sequelize from '../config/db.js';
+import multer from 'multer';
+import { uploadFile } from '../utils/Storage.js';
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 5 * 1024 * 1024, // 5MB limit
+  },
+}).single('file_surat');
 
 // Submit a new mail (user only)
 export const submitMail = async (req, res) => {
-  try {
-    const { url_file_surat, subject_surat } = req.body;
-    const userId = req.userId;
+  upload(req, res, async (err) => {
+    try {
+      if (err) {
+        return res.status(400).json({ message: 'File upload error', error: err.message });
+      }
 
-    const mail = await Mail.create({
-      id_pengirim: userId,
-      url_file_surat,
-      subject_surat,
-      tanggal_pengiriman: new Date()
-    });
+      const { subject_surat } = req.body;
+      const userId = req.userId;
 
-    // Create initial history record with 'diproses' status
-    await History.create({
-      id_surat: mail.id,
-      status: 'diproses',
-      tanggal_update: new Date()
-    });
+      if (!req.file) {
+        return res.status(400).json({ message: 'No file uploaded' });
+      }
 
-    res.status(201).json({
-      message: 'Mail submitted successfully',
-      mail
-    });
-  } catch (error) {
-    res.status(500).json({ message: 'Internal server error', error: error.message });
-  }
+      // Upload file to cloud storage
+      const fileUrl = await uploadFile(req.file);
+
+      const mail = await Mail.create({
+        id_pengirim: userId,
+        url_file_surat: fileUrl,
+        subject_surat,
+        tanggal_pengiriman: new Date()
+      });
+
+      // Create initial history record with 'diproses' status
+      await History.create({
+        id_surat: mail.id,
+        status: 'diproses',
+        tanggal_update: new Date()
+      });
+
+      res.status(201).json({
+        message: 'Mail submitted successfully',
+        mail
+      });
+    } catch (error) {
+      res.status(500).json({ message: 'Internal server error', error: error.message });
+    }
+  });
 };
+
 
 // Get all mails (admin only)
 export const getAllMails = async (req, res) => {
