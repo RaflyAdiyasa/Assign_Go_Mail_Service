@@ -1,10 +1,10 @@
 ### Submit Mail (User only)
 POST http://localhost:5001/api/mails
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzg4NzQzLCJleHAiOjE3NDkzOTIzNDN9.bNs90u2qks6AvYPjrHuc491LQgpvMTweUrpw0ilxBso
 Content-Type: application/json
 
 {
-  "url_file_surat": "https://example.com/surat123.pdf",
+  "url_file_surat": "https://example.com/testke2kata-rafly-gabisapdf",
   "subject_surat": "Surat Tugas Penelitian"
 }
 
@@ -14,27 +14,27 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvb
 
 ### Get User's Mails
 GET http://localhost:5001/api/mails/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzc1Mzk4LCJleHAiOjE3NDkzNzg5OTh9.qpowsfCfXCIT3Iiq5gNts-LuCGPkjSiMPwzKLPv2k00
 
 ### Get Mail Details
-GET http://localhost:5001/api/mails/details/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+GET http://localhost:5001/api/mails/details/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzc1MjI4LCJleHAiOjE3NDkzNzg4Mjh9.PFi9ZOoWgL9MTThQ5Hu4rRSX8Erc4e10wf3L-8PjHXQ
 
 ### Get Mail History
-GET http://localhost:5001/api/history/1
-Authorization: Bearer user-token-here
+GET http://localhost:5001/api/history/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzc1NTAzLCJleHAiOjE3NDkzNzkxMDN9.a_SSGM66TjZIBwZXDhHf5CskQl4SHfWqQ_vSSIOwCWs
 
 ### Get All Mails (Admin only)
 GET http://localhost:5001/api/mails
-Authorization: Bearer admin-token-here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM3NTI5MiwiZXhwIjoxNzQ5Mzc4ODkyfQ.GgoEetXqJEBT2YRoSUHtb-29GhinCQi-9STc3bKc1dw
 
 ### Get Mail Stats (Admin only)
 GET http://localhost:5001/api/mails/stats
-Authorization: Bearer admin-token-here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM3NTI5MiwiZXhwIjoxNzQ5Mzc4ODkyfQ.GgoEetXqJEBT2YRoSUHtb-29GhinCQi-9STc3bKc1dw
 
 ### Update Mail Status to Disetujui (Admin only)
 POST http://localhost:5001/api/history/1
-Authorization: Bearer admin-token-here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM3NTI5MiwiZXhwIjoxNzQ5Mzc4ODkyfQ.GgoEetXqJEBT2YRoSUHtb-29GhinCQi-9STc3bKc1dw
 Content-Type: application/json
 
 {
@@ -43,7 +43,7 @@ Content-Type: application/json
 
 ### Update Mail Status to Ditolak (Admin only)
 POST http://localhost:5001/api/history/2
-Authorization: Bearer admin-token-here
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTM3NTE5OSwiZXhwIjoxNzQ5Mzc4Nzk5fQ.DWgdmbtj2clhoVqnTDLZDRY3vK_pG9YnrH_NujHIyL4
 Content-Type: application/json
 
 {
