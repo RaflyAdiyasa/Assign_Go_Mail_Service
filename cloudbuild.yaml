@@ -19,7 +19,6 @@ steps:
       - "deploy"
       - "assigngo-mail"
       - "--image=gcr.io/$PROJECT_ID/assigngo-mail:$COMMIT_SHA"
-      - "--update-secrets=KEY_CREDENTIALS=key-credentials:latest"  
       - "--set-env-vars=DB_HOST=$_DB_HOST,DB_USER=$_DB_USER,DB_PASSWORD=$_DB_PASSWORD,DB_NAME=$_DB_NAME,JWT_SECRET=$_JWT_SECRET,REFRESH_SECRET=$_REFRESH_SECRET,GOOGLE_CLOUD_PROJECT_ID=$_GOOGLE_CLOUD_PROJECT_ID,GOOGLE_CLOUD_BUCKET_NAME=$_GOOGLE_CLOUD_BUCKET_NAME,GOOGLE_CLOUD_KEYFILE_PATH=$_GOOGLE_CLOUD_KEYFILE_PATH,"
       - "--region=us-central1"
       - "--timeout=1000s"
