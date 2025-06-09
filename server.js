@@ -8,7 +8,7 @@ import historyRoutes from './routes/historyRoutes.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = 8081;
 
 // Middleware
 app.use(cors());
