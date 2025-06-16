@@ -13,16 +13,16 @@ GET http://localhost:5001/api/mails/template
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
 
 ### Get User's Mails
-GET http://localhost:5001/api/mails/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzY4NTA3LCJleHAiOjE3NDkzNzIxMDd9.G55O59f-CIjJsy29VNmYCHOl3zO741sdx8FkZoERiUw
+GET https://assigngo-mail-424905547173.us-central1.run.app/api/mails/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5NTQyODgwLCJleHAiOjE3NDk1NDY0ODB9.b4ap7DRREzLHYvOhaqEvV4Nb_KhX7gpSp-Q8koM5FeE
 
 ### Get Mail Details
 GET http://localhost:5001/api/mails/details/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5Mzg4Njg5LCJleHAiOjE3NDkzOTIyODl9.N0iIX91a4AtktJONdE9dW-0rDYRUETDQhxC16eo5Dos
 
 ### Get Mail History
-GET http://localhost:5001/api/history/1
-Authorization: Bearer user-token-here
+GET https://assigngo-mail-424905547173.us-central1.run.app/api/history/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5NTQyODgwLCJleHAiOjE3NDk1NDY0ODB9.b4ap7DRREzLHYvOhaqEvV4Nb_KhX7gpSp-Q8koM5FeE
 
 ### Get All Mails (Admin only)
 GET http://localhost:5001/api/mails
@@ -51,8 +51,8 @@ Content-Type: application/json
   "alasan": "Format surat tidak sesuai dengan ketentuan"
 }
 ###
-POST http://localhost:5004/api/mails
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5MzkxMDk4LCJleHAiOjE3NDkzOTQ2OTh9.WzfJcMTQ58T3rlrianldTupOA-Eh_xEgGcvE-tlb_sw
+POST https://assigngo-mail-424905547173.us-central1.run.app/api/mails
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ5NTQyODgwLCJleHAiOjE3NDk1NDY0ODB9.b4ap7DRREzLHYvOhaqEvV4Nb_KhX7gpSp-Q8koM5FeE
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -60,7 +60,7 @@ Content-Disposition: form-data; name="subject_surat"
 
 Surat Tugas Penelitian
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file_surat"; filename="test.pdf"
+Content-Disposition: form-data; name="file_surat"; filename="testlagigass.pdf"
 Content-Type: application/pdf
 
 < ./Secret/test.pdf
