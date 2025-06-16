@@ -17,12 +17,12 @@ export const updateMailStatus = async (req, res) => {
     const history = await History.create({
       id_surat: mailId,
       status,
-      alasan: status === 'ditolak' ? alasan : null,
-      tanggal_update: new Date()
+      alasan: alasan || null, 
+      tanggal_update: new Date() 
     });
 
     res.json({
-      message: `Mail status updated to ${status}`,
+      message: `Mail status updated to ${status}`, 
       history
     });
   } catch (error) {
