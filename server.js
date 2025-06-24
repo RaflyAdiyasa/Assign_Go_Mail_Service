@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8081;
 
 // Middleware
 const allowedOrigins = [
-  'http://34.31.152.161',
+  'http://34.28.223.95',
   'http://localhost:3000'
 ];
 
